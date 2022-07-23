@@ -8,6 +8,12 @@ module.exports = {
 	userPerms: [],
 	botPerms: [],
 	run: async (client, interaction) => {
-		const memberCount =
+		const memberCount = interaction.guild.memberCount
+                const mc = new EmbedBuilder()
+                .setColor("Random")                 
+                .setTitle(`${interaction.guild.name}'s Member count!`)
+                .setDescription(`This server has ${memberCount} members!`)
+                .setTimestamp()
+                interaction.reply({ embeds: [mc] })
         }
 }
